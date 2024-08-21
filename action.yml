@@ -1,0 +1,19 @@
+name: "Hello World"
+author: "Prajwal Jadhav"
+description: "Greetings"
+inputs:
+  toGreet:
+    description: "Who to greet"
+    required: true
+    default: "World"
+  fromGreet:
+    description: "From who"
+    required: false
+outputs:
+  time:
+    description: "Time greeted"
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.toGreet }}
